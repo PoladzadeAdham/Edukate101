@@ -1,0 +1,34 @@
+﻿@model TeacherUpdateVm
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="FullName"></label>
+        <input asp-for="FullName" class="form-control" placeholder="Enter FullName">
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Image"></label>
+        <input asp-for="Image" class="form-control" placeholder="Enter Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Image"></label>
+
+        <select asp-for="CourseId" class="form-control">
+            @foreach (Course course in ViewBag.Courses)
+            {
+                <option value="@course.Id"> @course.Title </option>
+            }
+
+        </select>
+
+
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
