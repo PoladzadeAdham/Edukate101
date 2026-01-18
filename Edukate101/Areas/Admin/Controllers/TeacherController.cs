@@ -2,13 +2,15 @@
 using Edukate101.Helpers;
 using Edukate101.Models;
 using Edukate101.ViewModel.TeacherViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace Edukate101.Areas.Admin.Controllers
 {
-    [Area("Admin")] 
+    [Area("Admin")]
+    [Authorize(Roles ="Admin")]
     public class TeacherController : Controller
     {
         private readonly AppDbContext _context;

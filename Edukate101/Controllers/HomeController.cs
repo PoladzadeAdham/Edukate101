@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Edukate101.Controllers
 {
-    [Authorize(Roles ="Member")]
+    [Authorize(Roles ="Member,Admin")]
     public class HomeController(AppDbContext _context) : Controller
     {
        

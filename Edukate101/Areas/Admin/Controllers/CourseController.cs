@@ -2,6 +2,7 @@
 using Edukate101.Helpers;
 using Edukate101.Models;
 using Edukate101.ViewModel.CourseViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace Edukate101.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;
